@@ -30,12 +30,13 @@
   background-color: lightgray;
   padding: 5px;
   border-radius: 2px;
-  box-shadow: 0 0 3px 3px burlywood;
+  /* box-shadow: 0 0 3px 3px burlywood; */
 
 }
 .res-card:hover{
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition: .5s;
+  box-shadow: 0 0 3px 3px burlywood;
 }
 .res-image{
   width: 100%;
@@ -46,6 +47,7 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+ 
 }
 .filter-btn{
   padding: 10px;
@@ -55,4 +57,30 @@
   border: none;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px burlywood;
+}
+.shimmer-container{
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  
+}
+.shimmer-card{
+  height: 400px;
+  width: 250px;
+  background-color: rgba(128, 128, 128, 0.395);
+}
+.login-btn{
+  padding: 10px;
+  margin: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px burlywood;
+}
+.filter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
