@@ -89,3 +89,12 @@ not able to use useRoutError() in BrowserRouter
 
 - Client Side Routing
 - Server Side Routing
+
+# lazy loading
+
+-to make component load on demand
+-syntax
+-import { lazy } from'react';
+-const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
+-then wrap component in -<Suspense fallback=<h1>wdbfcjw</h1>>component</Suspense>
+in routing
