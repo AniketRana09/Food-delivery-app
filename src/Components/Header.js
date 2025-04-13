@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useContext } from "react";
 import { LOGO_URL } from "../Utils/Constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
-
+import UserContext from "../Utils/UserContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnReact, setBtnReact] = useState("Log in");
   const onlineStatus = useOnlineStatus();
-  useEffect(() => {
-    console.log("useEffect Called!");
-  }, []);
+  const data = useContext(UserContext);
+  //Subscribing to the Stoe using useSelector
+  const CartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className=" flex justify-between items-center bg-orange-400">
       <div className="">
@@ -29,7 +31,7 @@ const Header = () => {
             <Link to="/contact"> Contact</Link>
           </li>
           <li className="m-3 p-3">
-            <Link to="/cart"> Cart</Link>
+            <Link to="/cart"> Cart({CartItems.length})</Link>
           </li>
           <button
             className="m-3 p-3 bg-red-500"
@@ -41,6 +43,7 @@ const Header = () => {
           >
             {btnReact}
           </button>
+          <li className="p-3 m-3 font-semibold">{data.loggedInUser}</li>
         </ul>
       </div>
     </div>

@@ -10,8 +10,6 @@ const Body = () => {
   const [filteredRes, SetFilteredRes] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log(listofRes);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -20,7 +18,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=31.3260152&lng=75.57618289999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+
     //Optinal chaining
     SetListofRes(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -66,6 +64,7 @@ const Body = () => {
             Search
           </button>
         </div>
+
         <div>
           <button
             className="p-3 m-3 bg-orange-400 text-white rounded-lg font-semibold"

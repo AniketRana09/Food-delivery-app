@@ -8,21 +8,25 @@ import Cart from "./Components/Cart";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
 // dont use index as key(not recommended) instead use id as key
+import { Provider } from "react-redux";
+import AppStore from "./Utils/AppStore";
 const App = () => {
   return (
-    <BrowserRouter>
-      <div>
-        <Header />
-        <Routes>
-          <Route path="/" index element={<Body />} />
-          <Route path="/about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/restaurant/:resid" element={<RestaurantMenu />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Provider store={AppStore}>
+      <BrowserRouter>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" index element={<Body />} />
+            <Route path="/about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/restaurant/:resid" element={<RestaurantMenu />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </Provider>
   );
 };
 

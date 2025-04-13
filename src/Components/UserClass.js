@@ -24,8 +24,8 @@ class UserClass extends React.Component {
     const { name, bio, avatar_url, location } = this.state.userInfo;
 
     return (
-      <div className="user-section">
-        <div>
+      <div className="flex justify-between border border-black w-2/3 mx-auto my-auto shadow-lg bg-slate-300 p-5 items-center rounded-xl">
+        <div className="text-lg font-semibold mx-auto">
           <h1>About us</h1>
           <h2>Name :{name}</h2>
           <h3> Location:{location}</h3>
@@ -33,7 +33,7 @@ class UserClass extends React.Component {
           <h4>{bio}</h4>
         </div>
         <div>
-          <img src={avatar_url} alt="pfp" />
+          <img className={"rounded-full h-1/3"} src={avatar_url} alt="pfp" />
         </div>
       </div>
     );

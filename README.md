@@ -98,3 +98,12 @@ not able to use useRoutError() in BrowserRouter
 -const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
 -then wrap component in -<Suspense fallback=<h1>wdbfcjw</h1>>component</Suspense>
 in routing
+
+# Redux Toolkit
+
+- Install @reduxjs/toolkit and react-redux;
+- BUild Our Store
+- Connect Our Store To Our App
+- Slice (cartslice)
+- dispacth(action)
+- selector
